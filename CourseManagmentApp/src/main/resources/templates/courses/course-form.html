@@ -50,16 +50,16 @@
 
 			<span class="alert alert-danger" th:if="${errorMessage}"  th:text="${errorMessage}">Error</span>
 			<br></br>
-
+			<label class="form-label">Title:</label>
 			<input type="text" th:field="*{title}"
 					class="form-control mb-4 col-4" placeholder="title">
-
+			<label class="form-label">Description:</label>
 			<input type="text" th:field="*{description}"
 					class="form-control mb-4 col-4" placeholder="description">
-
+			<label class="form-label">Year:</label>
 			<input type="text" th:field="*{year}"
 					class="form-control mb-4 col-4" placeholder="year">
-					
+			<label class="form-label">Semester:</label>		
 			<input type="text" th:field="*{semester}"
 					class="form-control mb-4 col-4" placeholder="semester">
 				

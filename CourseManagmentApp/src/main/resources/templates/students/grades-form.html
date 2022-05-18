@@ -60,16 +60,18 @@
 			
 			
 			<span class="alert alert-danger" th:if="${errorMessage}"  th:text="${errorMessage}">Error</span>
-			<br></br>			
+			<br></br>
+			<label class="form-label">Project grade:</label>			
 			<input type="text" th:field="*{projectGrade}"
 					class="form-control mb-4 col-4" placeholder="Project Grade" />
-
+					
+			<label class="form-label">Exams grade:</label>
 			<input type="text" th:field="*{examsGrade}"
 					class="form-control mb-4 col-4" placeholder="Exams Grade" />
-					
+			<label class="form-label">Project weight:</label>
 			<input type="text" th:field="*{projectWeight}"
 					class="form-control mb-4 col-4" placeholder="Project weight" />
-
+			<label class="form-label">Exams weight:</label>
 			<input type="text" th:field="*{examsWeight}"
 					class="form-control mb-4 col-4" placeholder="Exams weight" />
 				
