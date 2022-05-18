@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Courses Directory</title>
+</head>
+
+<body>
+<!-- Main Navigation -->
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <a class="navbar-brand" href="/users/home.html">Course Managment App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/users/home.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/courses/course">Courses</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+
+	<h3>Courses Directory</h3>
+	<hr>
+	
+	<a th:href="@{/courses/setup(courseId=${cId},sType=${sType})}"
+		class="btn btn-primary btn-sm mb-3">
+		Setup Stats
+	</a>
+
+	
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Statistic</th>
+				<th>Action</th>
+				<th th:if="${value != null OR SkewnessValue != null}">Value</th>
+
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<td>Kurtosis</td>	
+				<td>
+					<!-- Add "ShowStatistics" button/link -->
+					<a th:href="@{/courses/showStatistics(courseId=${cId}, sType='Kurtosis')}"
+					   class="btn btn-info btn-sm">
+						Show Statistics
+					</a>
+				</td>
+				<td th:if="${KurtosisValue}" th:text="${value}"/> 
+			</tr>
+							
+			<tr>
+				<td>Max</td>	
+				<td>
+					<!-- Add "ShowStatistics" button/link -->
+					<a th:href="@{/courses/showStatistics(courseId=${cId}, sType='Max')}"
+					   class="btn btn-info btn-sm">
+						Show Statistics
+					</a>
+				</td>
+				<td th:if="${MaxValue}" th:text="${value}"/>
+			</tr>
+			
+			<tr>
+				<td>Mean</td>	
+				<td>
+					<!-- Add "ShowStatistics" button/link -->
+					<a th:href="@{/courses/showStatistics(courseId=${cId}, sType='Mean')}"
+					   class="btn btn-info btn-sm">
+						Show Statistics
+					</a>
+				</td>
+				<td th:if="${MeanValue}" th:text="${value}"/>
+			</tr>
+				
+			<tr>
+				<td>Median</td>	
+				<td>
+					<!-- Add "ShowStatistics" button/link -->
+					<a th:href="@{/courses/showStatistics(courseId=${cId}, sType='Median')}"
+					   class="btn btn-info btn-sm">
+						Show Statistics
+					</a>
+				</td>
+				<td th:if="${MedianValue}" th:text="${value}"/>
+			</tr>
+			
+			<tr>
+				<td>Min</td>	
+				<td>
+					<!-- Add "ShowStatistics" button/link -->
+					<a th:href="@{/courses/showStatistics(courseId=${cId}, sType='Min')}"
+					   class="btn btn-info btn-sm">
+						Show Statistics
+					</a>
+				</td>
+				<td th:if="${MinValue}" th:text="${value}"/>
+			</tr>
+				
+			<tr>
+				<td>Percentile</td>	
+				<td>
+				
+					<!-- Add "ShowStatistics" button/link -->
+					<a th:href="@{/courses/showStatistics(courseId=${cId}, sType='Percentile')}"
+					   class="btn btn-info btn-sm">
+						Show Statistics
+					</a>
+				</td>
+				<td th:if="${PercentileValue}" th:text="${value}"/>
+			</tr>
+			
+			<tr>
+				<td>Skewness</td>	
+				<td>
+					<!-- Add "ShowStatistics" button/link -->
+					<a th:href="@{/courses/showStatistics(courseId=${cId}, sType='Skewness')}"
+					   class="btn btn-info btn-sm">
+						Show Statistics
+					</a>
+				</td>
+				<td th:if="${SkewnessValue}" th:text="${value}"/>
+			</tr>
+				
+
+		</tbody>		
+	</table>
+	<hr>
+	<a th:href="@{/courses/course}">Back to Courses List</a>
+	
+</div>
+	
+</body>
+</html>
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Save Course</title>
+</head>
+
+<body>
+<!-- Main Navigation -->
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <a class="navbar-brand" href="/users/home.html">Course Managment App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/users/home.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/courses/course">Courses</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+	
+	<div class="container">
+	
+		<h3>Course Directory</h3>
+		<hr>
+		
+		<p class="h4 mb-4">Save Course </p>
+	
+		<form action="#" th:action="@{/courses/save}"
+						 th:object="${course}" method="POST">
+		
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{id}" />
+			
+			<input type="hidden" th:field="*{title}"
+					class="form-control mb-4 col-4" placeholder="title">
+			
+			<span class="alert alert-danger" th:if="${errorMessage}"  th:text="${errorMessage}">Error</span>
+			<br></br>
+			<input type="text" th:field="*{description}"
+					class="form-control mb-4 col-4" placeholder="description">
+
+			<input type="hidden" th:field="*{year}"
+					class="form-control mb-4 col-4" placeholder="year">
+					
+			<input type="hidden" th:field="*{semester}"
+					class="form-control mb-4 col-4" placeholder="semester">
+				
+			<button type="submit" class="btn btn-info col-2">Save</button>
+						
+		</form>
+	
+		<hr>
+		<a th:href="@{/courses/course}">Back to Courses List</a>
+		
+	</div>
+</body>
+
+</html>

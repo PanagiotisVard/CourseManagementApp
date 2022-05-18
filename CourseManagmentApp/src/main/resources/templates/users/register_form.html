@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<title>Register User Data</title>
+
+</head>
+<body>
+
+
+<div class="container">
+    <h1>User Registration</h1>
+    <br>
+    <br>
+    <hr>
+    
+    <form action="#" th:action="@{/users/register}" method="post" th:object="${user_data}">
+        <div class="mb4">
+        <span class="alert alert-danger" th:if="${errorMessage}"  th:text="${errorMessage}">Error</span>
+		<br></br>
+        <label class="form-label">Full name:</label>
+        <input type="text" class="form-control" th:field="*{name}" /><br/>
+ 		</div>
+ 		
+ 		<div class="mb4">
+        <label class="form-label">E-mail:</label>
+        <input type="text" class="form-control" th:field="*{email}" /><br/>
+ 		</div>
+ 		
+ 		<div class="mb4">
+        <label class="form-label">Password:</label>
+        <input type="password" class="form-control" th:field="*{password}" /><br/>
+		</div>
+        
+        <br/>
+ 
+        <button class="btn btn-primary" type="submit">Register</button>    
+    
+    
+    </form>
+</div>
+
+
+</body>
+</html>

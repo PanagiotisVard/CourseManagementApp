@@ -1,0 +1,1 @@
+INSERT INTO `course` (`id`, `title`, `description`, `year`, `semester`, `instructor_name`) VALUES ('1', 'test', 'test', '0', '0', 'maria1998');
